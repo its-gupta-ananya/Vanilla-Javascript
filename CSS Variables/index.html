@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <title>CSS Variables</title>
+    <link rel="stylesheet" type="text/css" href="variable.css" />
+  </head>
+  <body>
+    <div class="modify">
+      <label for="spacing"> Spacing </label>
+      <input
+        id="spacing"
+        type="range"
+        name="spacing"
+        min="10"
+        max="100"
+        value="10"
+        data-sizing="px"
+      />
+
+      <label for="blur"> Blur </label>
+      <input
+        id="blur"
+        type="range"
+        name="blur"
+        min="0"
+        max="10"
+        value="10"
+        data-sizing="px"
+      />
+
+      <label for="base"> Base Colour </label>
+      <input id="base" type="color" name="base" value=" black" />
+    </div>
+    <img src="https://source.unsplash.com/7bwQXzbF6KE/800x500" />
+    <script src="variable.js"></script>
+  </body>
+</html>
