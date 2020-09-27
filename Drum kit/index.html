@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Drum Kit !!</title>
+    <link rel="stylesheet" href="drum.css" />
+  </head>
+  <body>
+    <div class="keys">
+      <div data-key="65" class="key">
+        <kbd> A </kbd>
+        <span class="sound"> clap </span>
+      </div>
+      <div data-key="83" class="key">
+        <kbd> S </kbd>
+        <span class="sound"> Hihat </span>
+      </div>
+      <div data-key="68" class="key">
+        <kbd> D </kbd>
+        <span class="sound"> Kick </span>
+      </div>
+      <div data-key="70" class="key">
+        <kbd> F </kbd>
+        <span class="sound"> OpenHat </span>
+      </div>
+    </div>
+    <audio
+      data-key="65"
+      src="./audio/looperman-l-2655024-0219566-stormer-break.wav "
+    ></audio>
+    <audio
+      data-key="83"
+      src="./audio/looperman-l-2655024-0219566-stormer-break.wav"
+    ></audio>
+    <audio
+      data-key="68"
+      src="./audio/looperman-l-2655024-0219566-stormer-break.wav "
+    ></audio>
+    <audio
+      data-key="70"
+      src="./audio/looperman-l-2655024-0219566-stormer-break.wav "
+    ></audio>
+
+    <script src="drum.js"></script>
+  </body>
+</html>
