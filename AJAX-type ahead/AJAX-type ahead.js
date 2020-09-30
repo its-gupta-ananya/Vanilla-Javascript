@@ -1,18 +1,24 @@
+//Database needed.
 const endpoint =
   "https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json";
 const cities = [];
 // Returns a promise
 fetch(endpoint)
-  .then((blob) => blob.json())
+  .then((database) => database.json())
+  // To not have another array in the blob
   .then((data) => cities.push(...data)); // ... used to change array into psuh method ( proper cities spreading)
 
 function findMatches(wordtoMatch, cities) {
   return cities.filter((place) => {
-    // Find matrching state or cities
+    // Find matching state or cities
     const regex = new RegExp(wordtoMatch, "gi"); // g -- global , i == case insensitive
     return place.city.match(regex) || place.state.match(regex);
   });
 }
+function numberWithCommas(x) {
+  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+}
+
 function displayMatches() {
   const matchArray = findMatches(this.value, cities);
   const html = matchArray
@@ -29,11 +35,11 @@ function displayMatches() {
       return `
     <li>
         <span class= 'name'> ${cname} , ${sname} </span>
-        <span class="population'> ${place.population} </span>
+        <span class="population"> ${place.population} </span>
     </li>
     `;
     })
-    .join();
+    .join("");
   suggestions.innerHTML = html;
 }
 
